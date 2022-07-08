@@ -1,0 +1,15 @@
+INSERT INTO public."Tag"(
+	nome)
+	VALUES ('Geral'),
+	('Métodos Numéricos'),
+	('Métodos Numéricos 2'),
+	('Algoritmo em Grafos'),
+	('Matemática Discreta'),
+	('Engenharia de Software'),
+	('Redes de Computadores'),
+	('SGBD'),
+	('FBD'),
+	('Sistemas Operacionais'),
+	('CANA'),
+	('Seminários em Computação')
+	;

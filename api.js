@@ -1,17 +1,14 @@
-//import express from 'express';
-const express = require('express');
 
+const express = require('express');
+const bodyParser = require("body-parser");
 const sequelize = require('./utils/database')
 const router = require('./routes/routes')
-//import sequelize from './utils/database.js';
 
-//import router from './routes/routes.js';
 
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
-
-app.use(express.json());
+app.use(bodyParser.json()); // <--- Here
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use((_, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -24,4 +21,5 @@ app.use(router);
 
 sequelize.sync(); 
 
-app.listen(5000);
+console.log("Ouvindo a porta: ", process.env.PORT || 80);
+app.listen(process.env.PORT || 80);
